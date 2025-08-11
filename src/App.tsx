@@ -25,6 +25,9 @@ import Payment from './pages/client/Payment';
 import Reports from './pages/client/Reports';
 import ResearchOutcomes from './pages/client/ResearchOutcomes';
 import ResearchOutcomesDashboard from './pages/client/ResearchOutcomesDashboard';
+import Solutions from './pages/client/Solutions';
+import AugustaRuleWizard from './components/AugustaRuleWizard';
+import RDTCreditWizard from './components/RDTCreditWizard';
 
 // Admin pages
 import AdminDashboard from './pages/admin/Dashboard';
@@ -39,7 +42,6 @@ import PendingApproval from './pages/admin/PendingApproval';
 // Common
 import LandingPage from './pages/common/LandingPage';
 import NotFound from './pages/common/NotFound';
-import DemoModeIndicator from './components/common/DemoModeIndicator';
 
 function App() {
   return (
@@ -69,6 +71,9 @@ function App() {
               <Route path="reports" element={<Reports />} />
               <Route path="research-outcomes" element={<ResearchOutcomes />} />
               <Route path="research-outcomes/dashboard" element={<ResearchOutcomesDashboard />} />
+              <Route path="solutions" element={<Solutions />} />
+              <Route path="augusta-wizard" element={<AugustaRuleWizard />} />
+              <Route path="rdtc-wizard" element={<RDTCreditWizard onClose={() => {}} />} />
             </Route>
             
             {/* Admin routes */}
@@ -92,7 +97,6 @@ function App() {
           </Routes>
           
           <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
-          <DemoModeIndicator />
         </Router>
       </UserProvider>
     </ImpersonationProvider>
